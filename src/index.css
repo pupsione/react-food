@@ -11,3 +11,59 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.nav {
+  padding: 0 1rem;
+  display: flex;
+}
+
+.content {
+  min-height: calc(100vh - 70px - 64px);
+  padding: 1.5rem;
+}
+
+.grid {
+  grid-gap: 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.card-content {
+  height: 150px;
+  overflow: scroll;
+}
+
+.card-title {
+  text-align: center;
+  background-color: #01579b;
+  color: white;
+}
+
+.card-meal {
+  justify-content: space-between;
+}
+img{
+  width: 450px;
+}
+img,
+iframe {
+  max-width: 100%;
+}
+
+iframe {
+  height: 350px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.search-panel{
+  display: flex;
+  align-items: center;
+}
