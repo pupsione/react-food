@@ -12,7 +12,7 @@ function CategoryItem(props) {
             <div className="card-image">
                 <img src={strCategoryThumb} />
             </div>
-            <span className="card-title">{strCategory}</span>
+            <span className="card-title green">{strCategory}</span>
             <div className="card-content">
 
                 <p>{strCategoryDescription}</p>

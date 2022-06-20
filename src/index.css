@@ -44,14 +44,30 @@ code {
   text-align: center;
   background-color: #01579b;
   color: white;
+
+}
+
+.cart-meal {
+  display: flex;
+  align-items: center;
+  height: -webkit-fill-available;
+  justify-content: center;
 }
 
 .card-meal {
   justify-content: space-between;
 }
-img{
+
+.btn-back {
+  top: 100px;
+  position: fixed;
+  z-index: 9;
+}
+
+img {
   width: 450px;
 }
+
 img,
 iframe {
   max-width: 100%;
@@ -63,7 +79,51 @@ iframe {
   width: 100%;
 }
 
-.search-panel{
+.search-panel {
   display: flex;
   align-items: center;
+}
+
+.recipe-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  padding: 20px 0;
+}
+
+.recipe-text {
+  max-width: 380px;
+  overflow: auto;
+  max-width: 380px;
+  height: 250px;
+}
+
+.video-title {
+  margin-bottom: 20px;
+}
+
+.img-recipe {
+  height: fit-content;
+}
+
+@media (max-width: 890px) {
+  .recipe-container {
+    flex-direction: column;
+  }
+
+  .recipe-text {
+    max-width: none;
+    height: auto;
+  }
+
+  nav .brand-logo {
+    left: 10%;
+  }
+}
+
+@media(max-width: 560px) {
+  nav .brand-logo {
+    left: 16%;
+    font-size: 20px;
+  }
 }

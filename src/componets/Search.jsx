@@ -23,7 +23,7 @@ function Search({ cb = Function.prototype }) {
                     onChange={(e) => { setValue(e.target.value) }}
                     value={value}
                 />
-                <button className="btn" onClick={handleSubmit}>Search</button>
+                <button className="btn blue-grey" onClick={handleSubmit}>Search</button>
             </div>
         </div>
     )

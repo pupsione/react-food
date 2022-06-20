@@ -15,7 +15,7 @@ function Category() {
     }, [name])
 
     return <>
-        <button className="btn " onClick={() => navigate(-1)}>Go back</button>
+        <button className="btn btn-back" onClick={() => navigate(-1)}>Go back</button>
         {!meals.length ? <Preloader /> : <MealsList meals={meals} />}
     </>
 }

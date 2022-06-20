@@ -8,7 +8,7 @@ function MealsItem(props){
             <div className="card-image">
                 <img src={strMealThumb} />
             </div>
-            <span className="card-title">{strMeal}</span>
+            <span className="card-title cart-meal">{strMeal}</span>
             <div className="card-action">
                 <Link to={`/meal/${idMeal}`} href="#">Watch recipe</Link>
             </div>

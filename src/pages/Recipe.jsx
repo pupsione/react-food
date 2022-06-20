@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { getMealById } from '../API';
 import { Preloader } from "../componets/Preloader";
 
@@ -14,14 +14,19 @@ function Recipe() {
     }, [id])
     return (
         <>
-            <button className="btn" onClick={() => navigate(-1)}>Go back</button>
+            <button className="btn btn-back" onClick={() => navigate(-1)}>Go back</button>
             {!recipe.idMeal ? <Preloader /> : (
                 <div className="recipe container">
-                    <img src={recipe.strMealThumb} alt={recipe.strMeal} />
-                    <h1 className="recipe-name">{recipe.strMeal}</h1>
-                    <h6>Category: {recipe.strCategory}</h6>
-                    {recipe.strArea ? <h6>Area: {recipe.strArea}</h6> : null}
-                    <p>Recipe:{recipe.strInstructions}</p>
+                    <div className="recipe-container">
+                        <img src={recipe.strMealThumb} alt={recipe.strMeal} className='img-recipe'/>
+                        <div className="recipe-wrap">
+                            <h1 className="recipe-name">{recipe.strMeal}</h1>
+                            <Link to={`/category/${recipe.strCategory}`}>Category: {recipe.strCategory}</Link>
+                            {recipe.strArea ? <h6>Area: {recipe.strArea}</h6> : null}
+                            <p className="recipe-text">Recipe: {recipe.strInstructions}</p>
+                        </div>
+                    </div>
+                    
                     <table className="centered">
                         <thead>
                             <tr>
@@ -50,7 +55,7 @@ function Recipe() {
                     {
                         recipe.strYoutube ? (
                             <div className="row">
-                                <h5>Video recipe</h5>
+                                <h5 className="video-title">Video recipe</h5>
                                 <iframe title={id} src={`https://www.youtube.com/embed/${recipe.strYoutube.slice(-11)}`} allowFullScreen></iframe>
                             </div>
                         ) : null
